@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.hibernate.demo.entity.Student;
 
-public class PrimarKeyDemo {
+public class PrimaryKeyDemo {
 
 	public static void main(String[] args) {
 		
