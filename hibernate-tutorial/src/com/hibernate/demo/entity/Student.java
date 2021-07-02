@@ -18,6 +18,9 @@ public class Student {
 	@Id
 	// IDENTITY generally used with mysql to auto increment i.e database will handle, but depends
 	// on business/business rules
+	// in mysql alter table hb_student_tracker.student AUTO_INCREMENT=3000 
+	// to start from 3000
+	// truncate hb_student_tracker.student to restart from 1 and remove all records
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	@Column(name="id")
 	private int id;
