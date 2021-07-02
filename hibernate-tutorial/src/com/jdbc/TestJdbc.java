@@ -3,6 +3,8 @@ package com.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
+// hibernate built on top of JDBC
 public class TestJdbc {
 
 	public static void main(String[] args) {
