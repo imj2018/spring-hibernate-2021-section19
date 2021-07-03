@@ -32,7 +32,7 @@ public class QueryStudentDemo {
 			List<Student> students = session.createQuery("from Student").getResultList();
 			
 			// display the students
-			// use refactor to method
+			// use refactor to extract to a method
 			//for (Student item : students) {
 			//	System.out.println(item);
 			//}
@@ -44,6 +44,22 @@ public class QueryStudentDemo {
 				
 			System.out.println("\n\nStudents who have last name of Doe");
 			displayStudents(students);
+			
+			// query students: lastName='Doe' or firstName='Daffy'
+			// a space is needed second line to work + " s.lastName='Doe'...
+			students = session.createQuery("from Student student where" 
+					+ " student.lastName='Doe' OR student.firstName='Daffy'").getResultList();
+			
+			System.out.println("\n\nStudents who have last name of Doe OR first name Daffy");
+			displayStudents(students);
+			
+			// query students where email LIKE '%luv2code.com'
+			students = session.createQuery("from Student s where"
+					+ " s.email LIKE '%luv2code.com'").getResultList();
+			
+			System.out.println("\n\nStudents whose email ends with luv2code.com");
+			displayStudents(students);
+			
 			
 			// commit transaction
 			session.getTransaction().commit();
